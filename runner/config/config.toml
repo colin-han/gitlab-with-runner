@@ -4,7 +4,7 @@ check_interval = 0
 [[runners]]
   name = "node6"
   url = "http://gitlab-ce"
-  token = "342664c192338721627fdf1956ba5a"
+  token = "4d2b0b32b792b1df535409e1a43d72"
   executor = "docker"
   [runners.docker]
     tls_verify = false
