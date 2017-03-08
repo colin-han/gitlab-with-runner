@@ -1,0 +1,31 @@
+version: '2.0'
+services:
+  gitlab-ce:
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: 'gitlab-ce'
+    restart: always
+    hostname: 'gitlab-ce'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+      #nothing for now
+    ports:
+      - '80:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - './gitlab/config:/etc/gitlab'
+      - './gitlab/logs:/var/log/gitlab'
+      - './gitlab/data:/var/opt/gitlab'
+  gitlab-runner:
+    image: 'gitlab/gitlab-runner:latest'
+    restart: always
+    volumes:
+      - './runner/config:/etc/gitlab-runner'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    links:
+      - gitlab-ce
+
+networks:
+  default:
+    external:
+      name: gitlab

@@ -1,0 +1,16 @@
+concurrent = 1
+check_interval = 0
+
+[[runners]]
+  name = "node6"
+  url = "http://gitlab-ce"
+  token = "342664c192338721627fdf1956ba5a"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "node:6"
+    privileged = false
+    disable_cache = false
+    volumes = ["/cache"]
+    network_mode = "gitlab"
+  [runners.cache]
