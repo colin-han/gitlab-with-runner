@@ -24,7 +24,16 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
     links:
       - gitlab-ce
-
+    environment:
+      CI_SERVER_URL: 'http://gitlab-ce'
+      REGISTRATION_TOKEN: 'shanghaiptminfo342664c192338721627fdf1956ba5a'
+      REGISTER_RUN_UNTAGGED: 'true'
+      RUNNER_EXECUTOR: 'docker'
+      RUNNER_NAME: 'node6'
+      RUNNER_TAG_LIST: 'node,node6'
+      DOCKER_IMAGE: 'node:6'
+      DOCKER_NETWORK_MODE: 'gitlab'
+    #command: /usr/bin/gitlab-runner register -n
 networks:
   default:
     external:
