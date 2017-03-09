@@ -12,7 +12,7 @@ docker exec gitlab-runner \
     register -n \
              --name "node6" \
              --tag-list "node,node6" \
-             --docker-image "node:6"
+             --docker-image "colinhan/p2m-node6:latest"
 ```
 You can use above command to register multiple runner instance in this docker container.
 
