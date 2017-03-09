@@ -7,7 +7,8 @@ services:
     hostname: 'gitlab-ce'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-      #nothing for now
+        gitlab_rails['initial_root_password'] = "xA123456"
+        gitlab_rails['initial_shared_runners_registration_token'] = "shanghaiptminfo342664c192338721627fdf1956ba5a"
     ports:
       - '80:80'
       - '443:443'
@@ -16,8 +17,9 @@ services:
       - './gitlab/config:/etc/gitlab'
       - './gitlab/logs:/var/log/gitlab'
       - './gitlab/data:/var/opt/gitlab'
-  gitlab-runner:
+  gitlab-runner-node6:
     image: 'gitlab/gitlab-runner:latest'
+    container_name: 'gitlab-runner-node6'
     restart: always
     volumes:
       - './runner/config:/etc/gitlab-runner'
@@ -27,7 +29,6 @@ services:
     environment:
       CI_SERVER_URL: 'http://gitlab-ce'
       REGISTRATION_TOKEN: 'shanghaiptminfo342664c192338721627fdf1956ba5a'
-      REGISTER_RUN_UNTAGGED: 'true'
       RUNNER_EXECUTOR: 'docker'
       RUNNER_NAME: 'node6'
       RUNNER_TAG_LIST: 'node,node6'
