@@ -17,9 +17,9 @@ services:
       - './gitlab/config:/etc/gitlab'
       - './gitlab/logs:/var/log/gitlab'
       - './gitlab/data:/var/opt/gitlab'
-  gitlab-runner-node6:
+  gitlab-runner:
     image: 'gitlab/gitlab-runner:latest'
-    container_name: 'gitlab-runner-node6'
+    container_name: 'gitlab-runner'
     restart: always
     volumes:
       - './runner/config:/etc/gitlab-runner'
@@ -30,11 +30,7 @@ services:
       CI_SERVER_URL: 'http://gitlab-ce'
       REGISTRATION_TOKEN: 'shanghaiptminfo342664c192338721627fdf1956ba5a'
       RUNNER_EXECUTOR: 'docker'
-      RUNNER_NAME: 'node6'
-      RUNNER_TAG_LIST: 'node,node6'
-      DOCKER_IMAGE: 'node:6'
       DOCKER_NETWORK_MODE: 'gitlab'
-    #command: /usr/bin/gitlab-runner register -n
 networks:
   default:
     external:
