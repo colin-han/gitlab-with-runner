@@ -28,11 +28,11 @@ docker-compose up -d
 gitlab service服务启动后，执行下面的命令在gitlab service上注册node6 runner
 ```sh
 docker exec gitlab-runner \
-					gitlab-runner \
-					register -n \
-							 --name "node6" \
-							 --tag-list "node,node6" \
-							 --docker-image "colinhan/p2m-node6:latest"
+	     gitlab-runner \
+	     register -n \
+		      --name "node6" \
+                     --tag-list "node,node6" \
+                     --docker-image "colinhan/p2m-node6:latest"
 ```
 你可以用上面的命令在docker容器中注册多个runner实例
 
