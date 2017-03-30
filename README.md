@@ -1,12 +1,12 @@
-#准备工作
-###No1.
+# 准备工作
+### No1.
 安装docker和docker compose
 - win10：https://www.docker.com/docker-windows
 - Mac：https://www.docker.com/docker-mac
 - win7（Docker ToolBox）：https://www.docker.com/products/docker-toolbox
 tips：最好安装Docker的GUI工具 Kitematic
 
-###No2.
+### No2.
 输入命令` docker-machine env`,将输出的5行export写成.bashrc文件
 将.bashrc文件将放于个人目录下（Windows下为c:\Users\\\[YourName]\）
 
@@ -24,7 +24,7 @@ docker-compose up -d
 ```
 这样镜像就被pull了下来，容器也开始运行了
 
-#注册runner
+# 注册runner
 gitlab service服务启动后，执行下面的命令在gitlab service上注册node6 runner
 ```sh
 docker exec gitlab-runner \
