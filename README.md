@@ -37,11 +37,4 @@ docker exec gitlab-runner \
 你可以用上面的命令在docker容器中注册多个runner实例
 
 # 用法
-连接到 http://localhost. （或者用Kitematic点击进入）默认用户名为 `root`, 默认密码为 `xA123456`
-
-
-
-
-
-
-
+连接到 http://localhost. （或者用Kitematic点击进入）默认用户名为 `root`, 默认密码为 `123456`

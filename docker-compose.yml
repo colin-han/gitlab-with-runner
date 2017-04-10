@@ -7,7 +7,7 @@ services:
     hostname: 'gitlab-ce'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        gitlab_rails['initial_root_password'] = "xA123456"
+        gitlab_rails['initial_root_password'] = "123456"
         gitlab_rails['initial_shared_runners_registration_token'] = "shanghaiptminfo342664c192338721627fdf1956ba5a"
     ports:
       - '80:80'
