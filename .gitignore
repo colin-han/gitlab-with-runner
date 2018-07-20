@@ -2,3 +2,4 @@
 /gitlab/data
 /gitlab/logs
 /runner/config
+.DS_Store
